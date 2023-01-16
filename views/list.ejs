@@ -4,29 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
     <title>Task Master</title>
 </head>
 <body>
-    <h1>
-        <%= kindOfDay %>
-    </h1>
-    <ul>
-        <li>gym</li>
-        <li>run</li>
-        <li>fight</li>
+
+    <div class="taskContainer">
+        <h1>Stuff to be done:</h1>
+        <div class="taskHead">
+            <h1>
+                <%= kindOfDay %>
+            </h1>
+        </div>
+        <div class="taskBody">
+            <ul>
+
+                
+                <% for( var i=0; i < Tasks.length; i++){ %>
+                    <li class="taskItem">
+                        • <%= Tasks[i] %>
+                    </li>
+                    <% } %>
 
 
-        <% for( var i=0; i < Tasks.length; i++){ %>
-            <li>
-                <%= Tasks[i] %>
-            </li>
-            <% } %>
+            </ul>
+        </div>
+        <div class="inputBox">
+            <form action="/" method="post">
+                <input type="text" name="newItem">
+                <button  type="submit">Add</button>
+            </form>
+        </div>
+    </div>
 
 
-    </ul>
-    <form action="/" method="post">
-        <input type="text" name="newItem">
-        <button type="submit">Add</button>
-    </form>
 </body>
 </html>
