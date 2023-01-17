@@ -12,20 +12,24 @@
 <body>
 
     <div class="taskContainer">
-        <h1>Stuff to be done:</h1>
+        <h1><%=listTitle %> </h1>
         <div class="taskHead">
             <h1>
-                <%= kindOfDay %>
+                <%= date%>
             </h1>
         </div>
         <div class="taskBody">
             <ul>
 
-                
+
                 <% for( var i=0; i < Tasks.length; i++){ %>
-                    <li class="taskItem">
-                        • <%= Tasks[i] %>
-                    </li>
+                    <div class="taskItem">
+                        
+                        <input class="checkbox" type="checkbox">
+                        <p><%= Tasks[i] %></p>
+                            
+                    </div>
+
                     <% } %>
 
 
@@ -33,12 +37,12 @@
         </div>
         <div class="inputBox">
             <form action="/" method="post">
-                <input type="text" name="newItem">
-                <button  type="submit">Add</button>
+                <input class="taskBar" type="text" placeholder="New Task" name="newItem">
+                <button type="submit" name="list" value=<%= listTitle %> ><i class="fa-solid fa-location-arrow" ></i></button>
             </form>
         </div>
     </div>
 
-
+    <script src="https://kit.fontawesome.com/c62d9b9034.js" crossorigin="anonymous"></script>
 </body>
 </html>

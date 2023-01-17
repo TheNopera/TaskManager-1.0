@@ -33,6 +33,7 @@ body {
 .taskBody {
     background-color: #262e4c;
     width: 100%;
+    overflow:hidden;
     margin: 0;
 }
 
@@ -42,11 +43,26 @@ body {
 }
 
 .taskItem {
+
     padding: 10px;
     border-top: solid 1px #171d37;
     border-bottom: solid 1px #171d37;
     list-style: none;
 
+}
+
+
+
+.checkbox:checked+p{
+    text-decoration: line-through;
+    text-decoration-color:#494ca2 ;
+}
+
+
+.taskItem p{
+    font-size: 20px;
+    padding-left: 10px;
+    display: inline;
 }
 
 .inputBox {
@@ -56,10 +72,11 @@ body {
 
 .inputBox form {
     display: flex;
+    position: relative;
     flex-direction: column;
 }
 
-input {
+.taskBar {
     background-color: #171d37;
 
     border: none;
@@ -72,14 +89,17 @@ input {
 }
 
 button{
-    padding: 11px 16px;
+    padding: 9px 16px;
     border-radius: 40px;
-    width: 40vw;
-    min-width: 100px;
-    max-width: 300px;
-    margin: auto;
+    position: absolute;
+    right: 10px;
+    top: 5px;
     background: #494ca2;
     border-color: #494ca2;
     border: none;
     color: #fff
+}
+
+.fa-location-arrow{
+    transform: rotate(45deg);
 }
