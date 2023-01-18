@@ -15,7 +15,7 @@ var workTasks = [];
 
 app.get("/", (req, res) => {
 
-    var day = date();
+    var day = date.getDate();
 
     res.render('list', { listTitle: "Stuff To do", date: day, Tasks: tasks });
 })
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 app.get("/work", (req, res) => {
 
-    var day = date();
+    var day = date.getDate();
 
     res.render('list', { listTitle: "WORK", date: day, Tasks: workTasks });
 
